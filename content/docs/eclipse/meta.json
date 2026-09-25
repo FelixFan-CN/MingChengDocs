@@ -1,0 +1,7 @@
+{
+  "title": "Eclipse 星语",
+  "icon": "MagicWand",
+  "description": "Eclipse 星语 - Vela 智能穿戴 AI 对话客户端",
+  "root": true,
+  "pages": ["index", "usage", "privacy"]
+}

@@ -8,7 +8,7 @@ export const siteLocale = "zh_CN";
 export const siteLanguage = "zh-CN";
 export const sitePublisherName = "铭诚网络工作室";
 export const siteDescription =
-  "铭诚网络工作室应用服务统一文档站，包含 Eternal 永昼天气、WearPost 腕上信驿、SimpleFetch 网络桥接等服务的完整使用指南。";
+  "铭诚网络工作室应用服务统一文档站，包含 Eternal 永昼天气、WearPost 腕上信驿、Eclipse 星语等服务的完整使用指南。";
 export const siteKeywords = [
   "铭诚网络",
   "铭诚网络工作室",
@@ -19,6 +19,8 @@ export const siteKeywords = [
   "WearPost",
   "腕上信驿",
   "SimpleFetch",
+  "Eclipse",
+  "星语",
   "AstroBox",
   "Vela",
   "快应用",
@@ -47,7 +49,7 @@ export function resolvePageDescription(
 export const topNavLinks: MainItemType[] = [
   { text: "永昼天气", url: "/docs/eternal", active: "nested-url" },
   { text: "腕上信驿", url: "/docs/wearpost", active: "nested-url" },
-  { text: "SimpleFetch", url: "/docs/simplefetch", active: "nested-url" },
+  { text: "星语", url: "/docs/eclipse", active: "nested-url" },
   { text: "铭诚API", url: "/docs/mingcheng-api", active: "nested-url" },
   { text: "Vela开发", url: "/docs/vela", active: "nested-url" },
   { text: "图片处理", url: "/tools/image", active: "url" },
