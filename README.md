@@ -8,7 +8,7 @@
 
 - **Eternal 永昼天气** —— 全能型天气快应用
 - **WearPost 腕上信驿** —— Vela 智能穿戴邮件客户端
-- **SimpleFetch** —— AstroBox 网络桥接插件
+- **Eclipse 星语** —— Vela 智能穿戴 AI 对话客户端
 - **铭诚 API** —— 第三方快应用 API 服务
 
 ## 技术栈
@@ -46,7 +46,8 @@ pnpm start
 │   ├── eternal/              Eternal 永昼天气
 │   ├── wearpost/             WearPost 腕上信驿
 │   ├── simplefetch/          SimpleFetch 网络桥接
-│   └── mingcheng-api/        铭诚 API
+│   ├── mingcheng-api/        铭诚 API
+│   └── eclipse/              Eclipse 星语
 ├── public/assets/
 │   ├── brand/                Logo、工作室标识
 │   ├── fonts/                字体文件

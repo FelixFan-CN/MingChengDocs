@@ -6,7 +6,7 @@ import {
   CloudSunIcon,
   CodeIcon,
   EnvelopeSimpleIcon,
-  LinkIcon,
+  MagicWandIcon,
 } from "@phosphor-icons/react/dist/ssr";
 import { HomeLayout } from "fumadocs-ui/layouts/home";
 import { baseOptions } from "@/lib/layout.shared";
@@ -54,10 +54,10 @@ const docEntries = [
     href: "/docs/wearpost",
   },
   {
-    title: "SimpleFetch",
-    desc: "AstroBox 网络桥接插件，让不支持联网的设备连接网络",
-    icon: LinkIcon,
-    href: "/docs/simplefetch",
+    title: "Eclipse 星语",
+    desc: "Vela 智能穿戴 AI 对话客户端，支持多模型、结构化工具调用、JS 沙箱与全局记忆",
+    icon: MagicWandIcon,
+    href: "/docs/eclipse",
   },
   {
     title: "铭诚 API",
@@ -94,7 +94,7 @@ export default function HomePage() {
                     words={[
                       "Eternal永昼天气",
                       "WearPost腕上信驿",
-                      "SimpleFetch",
+                      "Eclipse星语",
                       "MingChengAPI",
                     ]}
                     className="text-fd-primary"
@@ -122,10 +122,10 @@ export default function HomePage() {
                   </span>
                 </Link>
                 <Link
-                  href="/docs/simplefetch"
+                  href="/docs/eclipse"
                   className="inline-flex items-center justify-center rounded-full border border-fd-border bg-fd-secondary px-6 py-3 text-sm font-medium text-fd-secondary-foreground transition-all hover:brightness-95"
                 >
-                  SimpleFetch
+                  Eclipse
                 </Link>
               </div>
 

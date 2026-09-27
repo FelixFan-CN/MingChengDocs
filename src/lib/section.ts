@@ -22,6 +22,8 @@ export function getSection(path: string | undefined): string | undefined {
       return "mingcheng";
     case "vela":
       return "vela";
+    case "eclipse":
+      return "eclipse";
     default:
       return undefined;
   }

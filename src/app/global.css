@@ -239,6 +239,8 @@ html[data-theme-transition="active"] #nd-page .prose :where(
     --simplefetch-color: #0ea5e9;
     --mingcheng-color: #f59e0b;
     --vela-color: #6366f1;
+    /* 浅色模式：使用更深的杏橙色保证白底下可读 */
+    --eclipse-color: #ef7f1a;
 }
 
 .dark {
@@ -254,6 +256,8 @@ html[data-theme-transition="active"] #nd-page .prose :where(
     --simplefetch-color: #38bdf8;
     --mingcheng-color: #fbbf24;
     --vela-color: #818cf8;
+    /* 深色模式：保留用户选择的浅杏色 */
+    --eclipse-color: #fee8c3;
 }
 
 /* Eternal 永昼天气 文档主题色 */
@@ -319,6 +323,19 @@ body.vela {
 .dark body.vela {
     --color-fd-primary-foreground: #1e1b4b;
     --color-fd-accent: color-mix(in srgb, var(--vela-color) 15%, transparent);
+}
+
+/* Eclipse 星语 文档主题色（eclipse section） */
+body.eclipse {
+    --color-fd-primary: var(--eclipse-color);
+    --color-fd-primary-foreground: #ffffff;
+    --color-fd-accent: color-mix(in srgb, var(--eclipse-color) 15%, transparent);
+    --color-fd-ring: var(--eclipse-color);
+}
+
+.dark body.eclipse {
+    --color-fd-primary-foreground: #6b3d00;
+    --color-fd-accent: color-mix(in srgb, var(--eclipse-color) 30%, transparent);
 }
 
 #nd-home-layout {
