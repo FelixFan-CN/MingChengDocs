@@ -33,6 +33,7 @@ import {
   UsersIcon,
   WatchIcon,
   WrenchIcon,
+  SparkleIcon
 } from "@phosphor-icons/react/dist/ssr";
 
 const docIcons = {
@@ -78,6 +79,7 @@ const docIcons = {
   WandSparkles: MagicWandIcon,
   Watch: WatchIcon,
   Wrench: WrenchIcon,
+  Sparkle: SparkleIcon,
 } as const;
 
 export const source = loader({

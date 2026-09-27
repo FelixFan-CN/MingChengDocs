@@ -6,6 +6,9 @@ description: OpenAI / Anthropic 双协议兼容的模型中继，自动双向转
 
 > 模块类型：service ｜ 基础路径：`/api/v2/ai` ｜ 鉴权：复合 Bearer Key（见下）
 
+<Callout type="warn">
+应用须在后台启用 `ai` 服务（否则 403）。
+</Callout>
 **OpenAI / Anthropic 双协议兼容**的模型中继：无论上游配置的是哪家供应商，下游都能用 OpenAI 或 Anthropic 任一格式调用，由中转层自动双向转换（请求体、非流式响应、流式 SSE）。
 
 ## 鉴权（非标准 apikey）

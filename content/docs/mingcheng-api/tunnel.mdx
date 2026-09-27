@@ -6,6 +6,10 @@ description: 多路复用流式 WebSocket 反向隧道，用标准 HTTP 访问�
 
 > 模块类型：service ｜ 基础路径：`/api/v2/tunnel` ｜ 鉴权：设备 APIKey（**noQuota**）
 
+<Callout type="warn">
+应用须在后台启用 `tunnel` 服务（否则 403）。
+</Callout>
+
 一条**多路复用 + 流式的 WebSocket 反向隧道**：一台运行在 Windows / Linux / macOS / Android 上的**网关程序**（协议客户端，使用方按本协议自行实现）主动 WS 外连、鉴权后获得 6 位**设备码**，成为所在局域网的入口。调用方只用**标准 HTTP**，服务端经 WS 把请求**流式并发**转发到设备本机，或它所在**局域网内的其它主机**。
 
 支持：任意方法、二进制、并发（多 streamId）、实时流式（SSE / 大文件边下边发）、跨主机（X-Tunnel-Target）。

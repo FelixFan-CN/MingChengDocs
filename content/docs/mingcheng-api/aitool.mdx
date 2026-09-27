@@ -6,6 +6,9 @@ description: 轮询方法的异步 AI 对话 / 工具调用任务
 
 > 模块类型：service ｜ 基础路径：`/api/v2/aitool` ｜ 鉴权：设备 APIKey（**noQuota**）
 
+<Callout type="warn">
+应用须在后台启用 `aitool` 服务（否则 403）。
+</Callout>
 把 AI 上游的 SSE 流式响应转换成客户端可**轮询**的异步任务，兼容不支持长连接 / 事件流的设备，支持 function calling（工具调用）。
 
 <Callout type="info">

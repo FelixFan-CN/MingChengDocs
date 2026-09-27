@@ -7,6 +7,7 @@ import {
   CodeIcon,
   EnvelopeSimpleIcon,
   MagicWandIcon,
+  LinkIcon,
 } from "@phosphor-icons/react/dist/ssr";
 import { HomeLayout } from "fumadocs-ui/layouts/home";
 import { baseOptions } from "@/lib/layout.shared";
@@ -60,6 +61,12 @@ const docEntries = [
     href: "/docs/eclipse",
   },
   {
+    title: "SimpleFetch",
+    desc: "AstroBox 网络桥接插件，让不支持联网的设备连接网络",
+    icon: LinkIcon,
+    href: "/docs/simplefetch",
+  },
+  {
     title: "铭诚 API",
     desc: "高自由度、高可拓展、开放的第三方API服务",
     icon: CodeIcon,
@@ -95,6 +102,8 @@ export default function HomePage() {
                       "Eternal永昼天气",
                       "WearPost腕上信驿",
                       "Eclipse星语",
+                      "SimpleFetch",
+                      "Vela开发文档",
                       "MingChengAPI",
                     ]}
                     className="text-fd-primary"

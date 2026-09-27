@@ -83,15 +83,18 @@ import {
 | 小米手环9Pro | √ | √ |
 | 小米手环10 | √ | 通过SimpleFetch |
 | 小米手环10Pro | √ | 通过SimpleFetch |
+
+### 关于小米手环 10 Pro 的网络连接
+
 <Callout type="warn">
-请注意!小米手环10Pro显示网络连接为硬件问题,请使用同步器/SimpleFetch激活!
+请注意！小米手环 10 Pro 被识别为**硬件层面无法直接联网**，需要配合 **SimpleFetch**（AstroBox 网络桥接插件）激活网络后才能正常对话。手环 10（非 Pro）同样依赖 SimpleFetch 提供联网。
 </Callout>
-<Callout type="warn">
-请注意!小米手环10Pro显示网络连接为硬件问题,请使用同步器/SimpleFetch激活!
-</Callout>
-<Callout type="warn">
-请注意!小米手环10Pro显示网络连接为硬件问题,请使用同步器/SimpleFetch激活!
-</Callout>
+
+遇到"网络连接失败 / 无网络"时，按此排查：
+
+1. 确认您的设备型号是否需要 SimpleFetch 桥接（见上表）
+2. 若需要，先完成 AstroBox + SimpleFetch 的安装与激活
+3. 若仍失败，检查手环是否保持在小米运动健康 App 的连接范围内
 ## 激活应用
 本应用分为两种激活方式:`同步器激活`与`快应用激活`  
 本次主要讲解`同步器激活`,快应用激活可以按照逐步提示激活!
