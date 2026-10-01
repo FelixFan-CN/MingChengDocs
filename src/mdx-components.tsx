@@ -3,6 +3,7 @@ import type { MDXComponents } from "mdx/types";
 import { ImageZoom as FumadocsImageZoom } from "fumadocs-ui/components/image-zoom";
 import { CodeBlock, Pre } from "fumadocs-ui/components/codeblock";
 import { DocImage } from "@/components/doc-image";
+import { AiModels } from "@/components/ai-models";
 import Zoom from "react-medium-image-zoom";
 
 /**
@@ -57,6 +58,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
       </CodeBlock>
     ),
     ImageZoom,
+    AiModels,
     ...components,
   };
 }
