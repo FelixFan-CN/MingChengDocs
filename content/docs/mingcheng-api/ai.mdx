@@ -34,20 +34,57 @@ Authorization: Bearer Eternal-K1aURbTQHzpB...（64 位设备 key）
 |---|---|---|
 | POST | `/api/v2/ai/v1/chat/completions` | OpenAI 协议入口，返回 OpenAI 格式 |
 | POST | `/api/v2/ai/v1/messages` | Anthropic 协议入口，返回 Anthropic 格式 |
-| GET | `/api/v2/ai/v1/models` | 列出该应用可用模型（下游别名） |
+| GET | `/api/v2/ai/v1/models` | 列出该应用可用模型（下游别名）及单价 |
+| GET | `/api/v2/ai/v1/usage` | 查询当前设备累计用量与分模型明细 |
 
 请求体分别是标准 OpenAI Chat Completions / Anthropic Messages 结构（`model`、`messages`、`system`、`max_tokens`、`stream`、`tools`、`temperature` 等）。
 
 ---
 
-## 模型列表
+## 模型别名与价格
 
-- `GET /v1/models` 返回所有可用别名：
+- 客户端 `model` 填**下游暴露名（别名）**，由开发者在后台配置；别名可与上游真实模型名不同（例如上游 `claude-3-5-sonnet-20241022`，下游暴露为 `claude`）。
+- 中转层自动把请求里的模型名改写成上游真实名再转发；响应 / 流再转回客户端所用协议。
+- `GET /v1/models` 返回所有可用别名及单价：
 
 ```json
 {
   "object": "list",
-  "data": [ { "id": "claude", "object": "model", "owned_by": "<appname>" } ]
+  "data": [
+    {
+      "id": "claude",
+      "object": "model",
+      "owned_by": "<appname>",
+      "provider": "anthropic",
+      "priceInput": 6,
+      "priceOutput": 30,
+      "costRequest": 1,
+      "costUsage": 0.1,
+      "unit": "元/百万token"
+    }
+  ]
+}
+```
+
+`priceInput` / `priceOutput` 为按量模型的输入 / 输出单价（元 / 百万 token）；未配置时为 `0`。
+
+---
+
+## 用量查询
+
+`GET /v1/usage`（用同一个复合 key 鉴权）返回该设备的累计调用与各模型用量。用量存于该应用独立的滚动表 `<appname>_ai_usage`（仅 usage/free-usage 应用记录，按「授权设备 × 模型」累计）：
+
+```json
+{
+  "object": "usage",
+  "appname": "<appname>",
+  "calls": 120,
+  "inputTokens": 123000,
+  "outputTokens": 45000,
+  "cost": 12.34,
+  "byModel": [
+    { "model": "claude", "calls": 120, "inputTokens": 123000, "outputTokens": 45000, "cost": 12.34 }
+  ]
 }
 ```
 
